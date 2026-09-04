@@ -7,9 +7,7 @@ authors = [
     { name = "terrycojones", email = "tcj25@cam.ac.uk" }
 ]
 requires-python = ">=3.14"
-dependencies = [
-    "weasyprint>=69.0",
-]
+dependencies = []
 
 [project.scripts]
 club-club = "club_club:main"
