@@ -1,10 +1,10 @@
 [project]
 name = "club-club"
 version = "0.1.0"
-description = "Add your description here"
+description = "Command-line UNIX for Bioinformatics club"
 readme = "README.md"
 authors = [
-    { name = "terrycojones", email = "tcj25@cam.ac.uk" }
+    { name = "terrycojones", email = "terence.jones@charite.de" }
 ]
 requires-python = ">=3.14"
 dependencies = []
