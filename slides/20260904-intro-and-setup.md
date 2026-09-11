@@ -1,34 +1,17 @@
 ---
 title: "CLUB club"
 sub_title: Command-line UNIX for Bioinformatics
-# authors:
-#   - Jackson
-#  - Nikolai
-#  - " Tali"
-#  - "Terry"
-# author: Jackson, Nikolai, Tali, Terry
 options:
   implicit_slide_ends: true
 theme:
   name: tokyonight-moon
-  # catppuccin-frappe
-  # gruvbox-dark
   override:
     slide_title:
-      # separator: true
-      # prefix: "--> "
       bold: true
     intro_slide:
       author:
-        # alignment: left
         positioning: below_title
-#    footer:
-#     style: progress_bar
-#     character: 🚀
     code:
-      # theme_name: base16-ocean.light
-      # base16-eighties.dark
-
       # The padding to be applied, in cells, around a code snippet.
       padding:
         horizontal: 2
@@ -39,7 +22,6 @@ theme:
 
       # Whether to set line numbers in all snippets by default.
       line_numbers: false
-
 ---
 
 Logistics
@@ -328,3 +310,10 @@ Drives" (SMB). The paths are:
 \\sc-data.sc-store.charite.de\sc-project-cc11-civclub
 \\sc-data.sc-store.charite.de\sc-scratch-cc11-civclub
 ```
+
+<!--
+Local Variables:
+indent-tabs-mode: nil
+End:
+-->
+

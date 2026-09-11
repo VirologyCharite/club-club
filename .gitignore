@@ -9,3 +9,4 @@ wheels/
 .ruff_cache
 *~
 *.mov
+slides/20260911-ngs-data/*.json

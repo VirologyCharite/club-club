@@ -1,6 +1,6 @@
 DATA_DIR=../../data/fastq
 
-time fastp \
+fastp \
     -i $DATA_DIR/sample_2_R1_001.fastq.gz \
     -I $DATA_DIR/sample_2_R2_001.fastq.gz \
     -o sample_2_R1-trimmed.fastq.gz \

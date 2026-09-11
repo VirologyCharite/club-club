@@ -1,14 +1,11 @@
 XARGS := xargs $(shell test $$(uname) = Linux && echo -r)
 
-MARKDOWN = $(wildcard slides/*.md)
+MARKDOWN = $(wildcard slides/*.md) $(wildcard slides/*/*.md)
 PDF = $(subst .md,.pdf,$(MARKDOWN))
 
 
 %.pdf: %.md
 	presenterm --export-pdf $<
-
-all:
-	echo "There is no default make target"
 
 pdf: $(PDF)
 
