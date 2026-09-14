@@ -119,9 +119,9 @@ See https://en.wikipedia.org/wiki/Cathode_ray_tube#History
 
 <!-- column: 1 -->
 
-![](images/teletype-terminal.png)
+![](../images/teletype-terminal.png)
 
-![](images/VT100.jpg)
+![](../images/VT100.jpg)
 
 <!-- reset_layout -->
 
