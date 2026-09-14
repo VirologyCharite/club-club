@@ -20,7 +20,7 @@ Run as follows:
 $ presenterm slides/20260904-intro-and-setup/20260904-intro-and-setup.md
 ```
 
-## Makign slide PDFs
+## Making slide PDFs
 
 ### Pre-requisites
 
