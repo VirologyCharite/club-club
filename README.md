@@ -7,15 +7,20 @@ Here you'll find the slides and videos for our CLUB club meetings.
 
 ## Presenting
 
-The slides are written in Markdown and are presented in the terminal.
-
-To present them, you'll need
+The slides are written in Markdown and are presented in the
+terminal. If you want to do that, you'll need
 [presenterm](https://github.com/mfontanini/presenterm) ([installation
 instructions](https://mfontanini.github.io/presenterm/install.html)).
 
 Use [kitty](https://sw.kovidgoyal.net/kitty/) if you want variable font sizes to work.
 
-## Slide PDFs
+Run as follows:
+
+```bash
+$ presenterm slides/20260904-intro-and-setup/20260904-intro-and-setup.md
+```
+
+## Makign slide PDFs
 
 ### Pre-requisites
 
