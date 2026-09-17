@@ -6,8 +6,10 @@ readme = "README.md"
 authors = [
     { name = "terrycojones", email = "terence.jones@charite.de" }
 ]
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.13"
+dependencies = [
+    "dark-matter>=7.4.0",
+]
 
 [project.scripts]
 club-club = "club_club:main"
