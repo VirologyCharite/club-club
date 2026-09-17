@@ -14,7 +14,7 @@ if [ "$#" -eq 0 ]; then
     exit 0
 fi
 
-for cmd in presenterm tmux; do
+for cmd in presenterm weasyprint tmux; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "verify-slides: '$cmd' not found in PATH" >&2
         exit 1
