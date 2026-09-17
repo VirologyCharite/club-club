@@ -35,3 +35,24 @@ $ brew install weasyprint gdk-pixbuf
 ```sh
 $ make pdf
 ```
+
+## Verifying slides build
+
+`make verify` checks that every slide deck under `slides/` can be exported
+to PDF by presenterm without error (this needs [tmux](https://github.com/tmux/tmux)
+installed, in addition to the pre-requisites above):
+
+```sh
+$ make verify
+```
+
+This same check runs automatically:
+
+* In CI, via [.github/workflows/verify-slides.yml](.github/workflows/verify-slides.yml),
+  on every push and pull request that touches `slides/`.
+* Locally, as a pre-commit hook that checks any staged slide decks before
+  each commit. Enable it once per clone with:
+
+  ```sh
+  $ git config core.hooksPath githooks
+  ```

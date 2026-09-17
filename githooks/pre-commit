@@ -1,0 +1,15 @@
+#!/bin/sh
+# Verify that staged slide decks can still be exported to PDF before
+# allowing the commit. Enable this hook with:
+#   git config core.hooksPath githooks
+
+repo_root=$(git rev-parse --show-toplevel) || exit 1
+
+staged_slides=$(git diff --cached --name-only --diff-filter=ACM -- 'slides/*/*.md')
+
+if [ -z "$staged_slides" ]; then
+    exit 0
+fi
+
+# shellcheck disable=SC2086
+"$repo_root/scripts/verify-slides.sh" $staged_slides
