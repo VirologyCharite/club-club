@@ -37,11 +37,10 @@ using `fastp`.
 
 Who is actually doing anything on the cluster between classes?
 
-Today we'll learn how to "map" the reads to references and (maybe) do
-some command-line practice. "Mapping" is also often called "aligning".
+Today we'll learn how to "map" the reads to references. "Mapping" is
+also often called "aligning".
 
-* bowtie2
-* bwa
+![](../images/read-mapping.png)
 
 Starting from trimmed FASTQ
 ===
@@ -51,6 +50,14 @@ Now that you've trimmed adapters from your FASTQ, what do you do next?
 You likely want to align them against a reference sequence (or
 sequences). That's what I think people do in Geneious when they ask us
 if they can have the raw reads for a sequencing run.
+
+# Mapping programs
+
+* bowtie2
+* bwa
+* minimap2
+
+And there are others!
 
 Install bowtie2
 ===
@@ -119,11 +126,11 @@ LV7008876184-LV7008414499-CGG2015787_S1_L002_R2_001-ar3.fastq.gz
 These files are both 8GB and each contains 282,894,963 reads.
 I.e. 0.56 billion reads in total.
 
-Do the mapping
+Map reads with bowtie2
 ===
 
 ```bash
-$ time bowtie2 --local --xeq --no-unal -x HBV \
+$ bowtie2 --local --xeq --no-unal -x HBV \
     -1 ~/data/fastq/HBV_RISE718_R1_trimmed.fastq.gz \
     -2 ~/data/fastq/HBV_RISE718_R2_trimmed.fastq.gz \
     > matches-local-without-single.sam
@@ -134,7 +141,7 @@ This takes about 8 seconds.
 Or if you want a few more matches, include the unpaired reads (using `-U`):
 
 ```bash
-$ time bowtie2 --local --xeq --no-unal -x HBV \
+$ bowtie2 --local --xeq --no-unal -x HBV \
     -1 ~/data/fastq/HBV_RISE718_R1_trimmed.fastq.gz \
     -2 ~/data/fastq/HBV_RISE718_R2_trimmed.fastq.gz \
     -U ~/data/fastq/HBV_RISE718_single_trimmed.fastq.gz \

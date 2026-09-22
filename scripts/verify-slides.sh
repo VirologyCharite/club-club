@@ -30,7 +30,7 @@ for f in "$@"; do
     exitfile=$(mktemp)
 
     tmux new-session -d -x 220 -y 50 -s "$tag" \
-        "presenterm --export-pdf -o /dev/null '$f' >'$logfile' 2>&1; echo \$? >'$exitfile'; tmux wait-for -S '$tag'"
+        sh -c "presenterm --export-pdf -o /dev/null '$f' >'$logfile' 2>&1; echo \$? >'$exitfile'; tmux wait-for -S '$tag'"
     tmux wait-for "$tag"
 
     code=$(cat "$exitfile")
