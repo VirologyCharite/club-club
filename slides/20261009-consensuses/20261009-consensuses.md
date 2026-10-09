@@ -47,7 +47,10 @@ This is actually a really complicated subject.
 
 * There is a lot of confusing terminology.
 * A lot of alternate tools with names that can be misleading.
-* These tools can be used in various combinations.
+* Some tools can be used in various combinations.
+* Some steps are optional.
+* This is a situation where it's easy to screw up without realising it.
+* The available tools are changing and new ones appear.
 
 Claude (and ChatGPT, presumably) can help a lot!
 
@@ -89,10 +92,10 @@ The difficulty of consensus calling
 Calling a consensus can be trivial, but it can also be arbitrarily
 difficult (i.e., up to and including impossible).
 
-Remember that the consensus is a fiction. It may be impossible to
-accurately decide on a single nucleotide call for a site because in
-the underlying data there is not a single nucleotide, there are
-several.
+Remember that the consensus is a fiction. It may be impossible (and
+wrong) to decide on an unambiguous single nucleotide call for a site
+because in the underlying data there is not a single nucleotide, there
+are several.
 
 Indels make the situation _much_ more complicated.
 
@@ -146,11 +149,17 @@ column) through the reference genome positions. For each site you look
 at the nucleotide calls (the bases _and_ their qualities) and "call" a
 decision. The sequence of calls gives you a consensus sequence.
 
-# Obvious considerations
+Remember: the reference length is in the SAM/BAM file header, but its
+sequence is not.
 
-* How many reads will you require at minimum to make a call at a site?
+# Obvious and not-so-obvious considerations
+
+* What read "depth" will you require, at minimum, to make a call at a site?
+* What should be put into consensus for reference regions with no matching reads?
 * What homogeneity threshold(s) will you use?
+* Do you want ambiguous nucleotide codes in your consensus?
 * How should nucleotide quality scores influence the calling?
+* You should use a `ploidy` of 1, if that is an option on the tools you choose.
 * If you're interested in minor variants, all such information is gone
   from a consensus sequence.
 
@@ -260,14 +269,15 @@ Using samtools by itself
 Samtools can do the entire job. Note that you don't give it the reference FASTA.
 
 ```sh
-$ samtools consensus ~/data/bam/RISE254-mapped-to-NC_055231.1.bam > consensus.fasta
+$ samtools consensus --ambig ~/data/bam/RISE254-mapped-to-NC_055231.1.bam > consensus.fasta
 ```
 
-Run it as `samtools consensus` to see its many options.  Claude's summary:
+Run it as `samtools consensus` to see its many options.
 
-This isn’t
-really competing with bcftools consensus for the “given a VCF, apply
-variants to a reference” task. It computes a consensus directly from a
+# Edited summary from Claude
+
+This differs from the `bcftools consensus` approach: given a VCF,
+apply variants to a reference. It computes a consensus directly from a
 BAM using a Bayesian model derived from gap5, without needing genotype
 calls or a reference-guided VCF workflow at all. Its stated use cases
 are more assembly-polishing oriented: producing a potentially
@@ -323,6 +333,14 @@ samtools mpileup -d 0 -aa -A -B -Q 0 \
 
 The above command can be found in
 `slides/20261009-consensuses/make_consensus.sh`.
+
+# Notes
+
+* iVar sometimes crashes.
+* If you have a BAM/SAM file with reads aligned against multiple
+  references, you *must* filter down to just the one you want with
+  `samtools mpileup -r REF-NAME ...`, otherwise you'll get a crazy
+  (long) result based on all sites in all references!
 
 
 Upcoming classes
