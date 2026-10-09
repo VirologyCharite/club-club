@@ -89,7 +89,7 @@ contamination, etc.
 The difficulty of consensus calling
 ===
 
-Calling a consensus can be trivial, but it can also be arbitrarily
+Calling a consensus _can_ be trivial. But it can also be arbitrarily
 difficult (i.e., up to and including impossible).
 
 Remember that the consensus is a fiction. It may be impossible (and
