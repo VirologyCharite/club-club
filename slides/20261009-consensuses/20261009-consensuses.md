@@ -229,10 +229,13 @@ $ bcftools mpileup \
     | less
 ```
 
-Using bcftools
+Calling a consensus using bcftools
 ===
 
-First: `pixi add bedtools`. Then, a pipeline could look like this:
+First: `pixi add bedtools samtools` (you should already have
+`samtools` from an earlier class).
+
+Then, a pipeline could look like this:
 
 ```sh
 # 1. QC/adapter trim
@@ -262,9 +265,9 @@ $ bcftools consensus -f reference.fa -m lowcov.merged.bed filtered.vcf.gz \
   > consensus.fa
 ```
 
-This is fine, but you won't get any ambiguous calls!
+This is fine, but you won't get any ambiguous nucleotide calls!
 
-Using samtools by itself
+Calling a consensus using samtools alone
 ===
 
 Samtools can do the entire job. Note that you don't give it the
@@ -304,7 +307,7 @@ to apply population- or amplicon-specific filtering logic before
 deciding what goes into the consensus, since it’s much more rigid and
 lacks bcftools’s flexibility to filter first.
 
-Using `samtools mpileup | ivar`
+Calling a consensus using `samtools mpileup` and `ivar`
 ===
 
 iVar can be used to call a consensus, based on "pileup" information
