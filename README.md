@@ -7,7 +7,7 @@ Here you'll find the slides and videos for our CLUB club meetings.
 * 2026-09-18: **Mapping with bowtie2** [Video](https://www.youtube.com/watch?v=fUVUMLMscdk) ✽ [PDF](slides/20260918-nt-mapping/20260918-nt-mapping.pdf) ✽ [Markdown](slides/20260918-nt-mapping/20260918-nt-mapping.md)
 * 2026-09-25: **Using Slurm** [Video](https://www.youtube.com/watch?v=xhfKUMNoMFQ) ✽ [PDF](slides/20260925-slurm/20260925-slurm.pdf) ✽ [Markdown](slides/20260925-slurm/20260925-slurm.md)
 * 2026-10-02: **Getting sequences** [Video](https://www.youtube.com/watch?v=3I-6uYH051Y) ✽ [PDF](slides/20261002-getting-sequences/20261002-getting-sequences.pdf) ✽ [Markdown](slides/20261002-getting-sequences/20261002-getting-sequences.md)
-* 2026-10-09: **Making consensuses** [Video](https://www.youtube.com/watch?v=XXX) ✽ [PDF](slides/20261009-consensuses/20261002-consensuses.pdf) ✽ [Markdown](slides/20261009-consensuses/20261009-consensuses.md)
+* 2026-10-09: **Making consensuses** [Video](https://www.youtube.com/watch?v=64IFH_-Wmik) ✽ [PDF](slides/20261009-consensuses/20261002-consensuses.pdf) ✽ [Markdown](slides/20261009-consensuses/20261009-consensuses.md)
 
 ## Presenting
 
