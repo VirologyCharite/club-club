@@ -338,11 +338,16 @@ Try `samtools mpileup | ivar` now
 I put some sample data on the Charité cluster. Try this:
 
 ```sh
+$ pixi add ivar samtools
+$ pixi shell
+```
+
+```sh
 data=/sc-projects/sc-proj-cc11-civclub/club-club/data
 
 samtools mpileup -d 0 -aa -A -B -Q 0 \
     --fasta-ref $data/references/NC_055231.1.fasta \
-    $data/bam/mapped-to-NC_055231.1.bam \
+    $data/bam/RISE254-mapped-to-NC_055231.1.bam \
     | ivar consensus -p consensus -q 20 -t 0.6 -m 5
 ```
 
