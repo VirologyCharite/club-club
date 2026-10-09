@@ -208,12 +208,13 @@ VCF format
 ===
 
 If you read about consensus calling online, you're likely to run into
-VCF (variant call format). This is a text file format used to describe
-sequence variation (relative to a reference).
+`VCF` (variant call format). This is a TAB-separated value (".tsv")
+file format used to describe sequence variation (relative to a
+reference).
 
 See https://en.wikipedia.org/wiki/Variant_Call_Format
 
-You can easily produce VCF from a SAM/BAM file:
+You can easily produce `VCF` from a SAM/BAM file:
 
 ```sh
 $ pixi add bcftools
@@ -266,13 +267,17 @@ This is fine, but you won't get any ambiguous calls!
 Using samtools by itself
 ===
 
-Samtools can do the entire job. Note that you don't give it the reference FASTA.
+Samtools can do the entire job. Note that you don't give it the
+reference FASTA. I have never used this samtools sub-command and
+wasn't even aware of it until about a month ago. It was introduced in
+2022 and was changing into the middle of 2023.
 
 ```sh
-$ samtools consensus --ambig ~/data/bam/RISE254-mapped-to-NC_055231.1.bam > consensus.fasta
+$ samtools consensus --ambig ~/data/bam/RISE254-mapped-to-NC_055231.1.bam \
+    > consensus.fasta
 ```
 
-Run it as `samtools consensus` to see its many options.
+Run it as `samtools consensus` to see its many other options.
 
 # Edited summary from Claude
 
@@ -299,28 +304,35 @@ to apply population- or amplicon-specific filtering logic before
 deciding what goes into the consensus, since it’s much more rigid and
 lacks bcftools’s flexibility to filter first.
 
-Using samtools mpileup | ivar
+Using `samtools mpileup | ivar`
 ===
 
-This is what we use.
+iVar can be used to call a consensus, based on "pileup" information
+produced by `samtools`. See
+https://andersen-lab.github.io/ivar/html/index.html for more on iVar.
+
+This is the approach we currently use in the diagnostics pipeline.
+
+# Install iVar
 
 ```sh
-# First, install ivar:
 $ pixi add ivar
 ```
 
-Here's the general pattern:
+# The general usage pattern:
 
 ```sh
-$ samtools mpileup -d 0 -aa -A -B -Q 0 --fasta-ref reference.fasta matches.bam
-    | ivar consensus -p consensus-prefix -q 20 -t 0.6 -m 5
+$ samtools mpileup OPTIONS matches.bam | ivar consensus OPTIONS
 ```
 
 Run `samtools mpileup` by itself or `ivar consensus` by itself to see
-the meaning of the various options. Note that `samtools mpileup` is
-_not_ generating VCF.
+the the various command-line options. Note that `samtools mpileup` does
+_not_ generate VCF (though it used to).
 
-And you can try this on the Charité cluster:
+Try `samtools mpileup | ivar` now
+===
+
+I put some sample data on the Charité cluster. Try this:
 
 ```sh
 data=/sc-projects/sc-proj-cc11-civclub/club-club/data
