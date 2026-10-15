@@ -366,11 +366,11 @@ The above command can be found in
 Upcoming classes
 ===
 
+* Making multiple-sequence alignments.
+* Tree making.
 * The dark-matter tools.
 * _de novo_ assembly.
 * Protein-level matching.
-* Making multiple-sequence alignments.
-* Tree making.
 
 <!--
 Local Variables:
