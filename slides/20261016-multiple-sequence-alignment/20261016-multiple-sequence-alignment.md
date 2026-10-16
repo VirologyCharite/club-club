@@ -140,6 +140,11 @@ Full pairwise alignment can be slow.
 MAFFT: Guide tree
 ===
 
+MAFFT uses the guide tree to determine the order in which it
+progressively aligns sequences (or groups of sequences).
+
+Here's how it makes the tree:
+
 * Distances are clustered to make a rooted tree. This fixes the order
   in which sequences and groups are merged. Sequence weighting keeps
   many near-identical sequences from dominating.
@@ -150,7 +155,7 @@ MAFFT: Guide tree
 MAFFT: Progressive alignment
 ===
 
-Working from the leaves of the tree to the root, MAFFT merges
+Working from the leaves of the guide tree to the root, MAFFT merges
 sequences into groups and groups into larger groups. Each merge is a
 group-to-group (profile) dynamic-programming alignment. A column
 pair’s score is the weighted average of the substitution scores
@@ -160,20 +165,20 @@ This is where the FFT comes in. MAFFT doesn’t run dynamic programming
 over the full length right away. It converts each residue into
 numbers: for amino acids, their volume and polarity; for nucleotides,
 one value per base. It then uses the fast Fourier transform to compute
-the correlation between the two profiles at every possible
-offset. Peaks in the correlation mark offsets at which homologous
-segments line up. MAFFT locates those segments and runs dynamic
-programming only between and around them, which is much cheaper for
-long sequences. --nofft (the NW-NS methods) skips this shortcut and
-uses plain dynamic programming throughout.
-
-Like every progressive method, this one has a weakness: gaps placed in
-early merges are fixed for the rest of the run.
+the correlation between the two profiles at every possible offset.
+Peaks in the correlation mark offsets at which homologous segments
+line up. MAFFT locates those segments and runs dynamic programming
+only between and around them, which is much cheaper for long
+sequences. --nofft (the NW-NS methods) skips this shortcut and uses
+plain dynamic programming throughout.
 
 ![](../images/mafft-guide-tree.png)
 
 MAFFT: Optional iterative refinement
 ===
+
+Progressive methods have a weakness: gaps placed in early merges are
+fixed for the rest of the run.
 
 Refinement goes back to correct early mistakes. MAFFT repeatedly cuts
 one branch of the guide tree, which splits the alignment into two
