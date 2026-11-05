@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.13"
 resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'win32'",
@@ -392,7 +392,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dark-matter", specifier = ">=7.4.0" }]
+requires-dist = [{ name = "dark-matter", specifier = ">=7.5.6" }]
 
 [[package]]
 name = "colorama"
@@ -513,7 +513,7 @@ wheels = [
 
 [[package]]
 name = "dark-matter"
-version = "7.4.0"
+version = "7.5.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bio" },
@@ -528,7 +528,6 @@ dependencies = [
     { name = "ipython" },
     { name = "kaleido" },
     { name = "matplotlib" },
-    { name = "mvlib" },
     { name = "mysql-connector-python" },
     { name = "numpy" },
     { name = "plotly" },
@@ -546,7 +545,10 @@ dependencies = [
     { name = "types-requests" },
     { name = "xlsxwriter" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1c/86/994280cd60071b28b62b12dcf21bcda06f58d3b9e5620c65bc654b46f9b1/dark_matter-7.4.0.tar.gz", hash = "sha256:90cfba3a3c267c6b7c75dc15227b1fb1895dc06f8fcf9198d6ee17aebea36c5d", size = 498003, upload-time = "2026-09-01T11:32:31.88Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/96/6c/e68a0b0948e564942f48e8acdd9e8e658ded052170e3a120e26932a07ed8/dark_matter-7.5.6.tar.gz", hash = "sha256:f22facf6802705f76315122c664e7a16b4c98e4d7eb803dab9cc9d17c7f780d7", size = 494546, upload-time = "2026-11-04T21:41:48.815Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/5b/78e46eda091c09038ff45669e69ccea23feb21cbd01ee1f3298311967a55/dark_matter-7.5.6-py3-none-any.whl", hash = "sha256:63322b50654b007eac4eeac8529ed2827ef501f62f2756d4723806204000bc40", size = 443660, upload-time = "2026-11-04T21:41:46.635Z" },
+]
 
 [[package]]
 name = "dendropy"
@@ -1013,15 +1015,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz", hash = "sha256:48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d", size = 145772, upload-time = "2026-05-22T14:14:29.909Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e8/3d/1087453384dbde46a8c7f9356eead2c58be8a7bf156bca40243377c85715/more_itertools-11.1.0-py3-none-any.whl", hash = "sha256:4b65538ae22f6fed0ce4874efd317463a7489796a0939fa66824dd542125a192", size = 72226, upload-time = "2026-05-22T14:14:28.824Z" },
-]
-
-[[package]]
-name = "mvlib"
-version = "0.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/21/39/bf2d332763280ebdd4386c72f28aaff37e5e33d743fe36d2d2a1e8a5bcc1/mvlib-0.1.tar.gz", hash = "sha256:59ee3ae02ac71ca92b0b8cfd2f82ff79394a74368a7670d8403b5b26fd88293f", size = 3307, upload-time = "2024-04-07T10:14:03.876Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f5/28/004544b11c1793861c2c37250afb3e3793299400a7174006c9fa5134f623/mvlib-0.1-py3-none-any.whl", hash = "sha256:46cf494925fc1ae38e08896ece90d1370ab282628c94614ab5b99d9a4c2e75a9", size = 3970, upload-time = "2024-04-07T10:14:02.308Z" },
 ]
 
 [[package]]
