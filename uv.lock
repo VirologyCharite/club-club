@@ -392,7 +392,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dark-matter", specifier = ">=7.5.6" }]
+requires-dist = [{ name = "dark-matter", editable = "../../../dark-matter/dark-matter" }]
 
 [[package]]
 name = "colorama"
@@ -513,8 +513,8 @@ wheels = [
 
 [[package]]
 name = "dark-matter"
-version = "7.5.6"
-source = { registry = "https://pypi.org/simple" }
+version = "7.5.8"
+source = { editable = "../../../dark-matter/dark-matter" }
 dependencies = [
     { name = "bio" },
     { name = "biopython" },
@@ -545,10 +545,47 @@ dependencies = [
     { name = "types-requests" },
     { name = "xlsxwriter" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/96/6c/e68a0b0948e564942f48e8acdd9e8e658ded052170e3a120e26932a07ed8/dark_matter-7.5.6.tar.gz", hash = "sha256:f22facf6802705f76315122c664e7a16b4c98e4d7eb803dab9cc9d17c7f780d7", size = 494546, upload-time = "2026-11-04T21:41:48.815Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/8f/5b/78e46eda091c09038ff45669e69ccea23feb21cbd01ee1f3298311967a55/dark_matter-7.5.6-py3-none-any.whl", hash = "sha256:63322b50654b007eac4eeac8529ed2827ef501f62f2756d4723806204000bc40", size = 443660, upload-time = "2026-11-04T21:41:46.635Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "bio", specifier = ">=1.8.1" },
+    { name = "biopython", specifier = ">=1.87" },
+    { name = "bz2file", specifier = ">=0.98" },
+    { name = "cachetools", specifier = ">=5.5.2" },
+    { name = "cython", specifier = ">=0.29.16" },
+    { name = "dendropy", specifier = ">=5.0.1" },
+    { name = "edlib", specifier = ">=1.3.9.post1" },
+    { name = "ete4", specifier = ">=4.4.0" },
+    { name = "gb2seq", specifier = ">=0.3.6" },
+    { name = "ipython", specifier = ">=8.12.3" },
+    { name = "kaleido", specifier = ">=1.2.0" },
+    { name = "matplotlib", specifier = ">=3.7.5" },
+    { name = "mysql-connector-python", specifier = ">=9.0.0" },
+    { name = "numpy", specifier = ">=1.14.2" },
+    { name = "plotly", specifier = ">=6.6.0" },
+    { name = "polars", specifier = ">=1.36.1" },
+    { name = "progressbar", specifier = ">=2.5" },
+    { name = "prseq", specifier = ">=0.0.34" },
+    { name = "pysam", specifier = ">=0.23.0" },
+    { name = "pyzmq", specifier = ">=14.3.1" },
+    { name = "requests", specifier = ">=2.32.3" },
+    { name = "rich", specifier = ">=14.0.0" },
+    { name = "scikit-learn", specifier = ">=1.3.2" },
+    { name = "simplejson", specifier = ">=3.5.3" },
+    { name = "summarize-ranges", specifier = ">=0.1.1" },
+    { name = "tomli", marker = "python_full_version < '3.11'", specifier = ">=2.0.1" },
+    { name = "types-cachetools", specifier = ">=5.5.0" },
+    { name = "types-requests", specifier = ">=2.32.0" },
+    { name = "xlsxwriter", specifier = ">=3.2.9" },
 ]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "nox", specifier = ">=2025.5.1" },
+    { name = "pytest", specifier = ">=8.3.5" },
+    { name = "ruff", specifier = ">=0.15.9" },
+]
+docs = [{ name = "mkdocs-material", specifier = ">=9.7.7" }]
 
 [[package]]
 name = "dendropy"

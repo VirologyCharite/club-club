@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<style>
+
+        table {
+            border-collapse: collapse;
+        }
+        table, td {
+            border: 1px solid #ccc;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        td {
+            vertical-align: top;
+            font-size: 14px;
+        }
+        td.empty {
+            min-width: 70px;
+            min-height: 70px;
+        }
+        span.name {
+            font-weight: bold;
+        }
+        span.best {
+            font-weight: bold;
+        }
+        td.nt-identity {
+            text-align: right;
+        }
+                
+.threshold-0_96 { background-color: orange; }
+.threshold-0_95 { background-color: yellow; }
+.threshold-0_0 { background-color: #eee; }
+</style>
+
+<h1>Sequence versus sequence identity table</h1>
+
+<p>
+
+The table cells below show the nucleotide identity fraction for the sequences
+(<span class="best">like this</span> for the best value in each row). The
+identity fraction numerator is the sum of the number of identical
+    
+nucleotides plus the number of ambiguously matching nucleotides.
+The denominator
+is the length of the sequence <em>for the row</em>. Sequence gaps
+are not included when calculating their lengths.
+
+</p>
+    
+
+<p>
+
+Key to abbreviations:
+  <ul>
+    
+<li>L: sequence <strong>L</strong>ength.</li>
+<li>G: number of <strong>G</strong>aps in sequence.</li>
+<li>IM: <strong>I</strong>dentical nucleotide <strong>M</strong>atches.</li>
+<li>AM: <strong>A</strong>mbiguous nucleotide <strong>M</strong>atches.</li>
+
+    <li>GG: <strong>G</strong>ap/<strong>G</strong>ap matches
+                (both sequences have gaps).</li>
+    <li>G?: <strong>G</strong>ap/Non-gap mismatches (one sequence has a gap).</li>
+
+
+    <li>NE: <strong>N</strong>on-<strong>e</strong>qual nucleotide mismatches.</li>
+  </ul>
+</p>
+
+<div style="overflow-x:auto;">
+<table>
+  <tbody>
+    <tr>
+    <td class="empty">&nbsp;</td>
+    <td class="title"><span class="name">AB116084</span>
+    </td>
+    <td class="title"><span class="name">AB453988</span>
+    </td>
+    <td class="title"><span class="name">AY738142</span>
+    </td>
+    <td class="title"><span class="name">AY934764</span>
+    </td>
+    <td class="title"><span class="name">FJ692556</span>
+    </td>
+    </tr>
+    <tr>
+      <td class="title"><span class="name">AB076679</span>
+<br/>L:3221
+<br/>G:0
+</td>
+      <td class="nt-identity threshold-0_96">
+<span>0.961</span>
+<br/>IM:3095
+<br/>AM:0
+<br/>GG:0<br/>G?:0
+<br/>NE:126
+      </td>
+      <td class="nt-identity threshold-0_96">
+<span class="best">0.965</span>
+<br/>IM:3107
+<br/>AM:0
+<br/>GG:0<br/>G?:0
+<br/>NE:114
+      </td>
+      <td class="nt-identity threshold-0_0">
+<span>0.942</span>
+<br/>IM:3034
+<br/>AM:1
+<br/>GG:0<br/>G?:0
+<br/>NE:186
+      </td>
+      <td class="nt-identity threshold-0_95">
+<span>0.952</span>
+<br/>IM:3067
+<br/>AM:0
+<br/>GG:0<br/>G?:0
+<br/>NE:154
+      </td>
+      <td class="nt-identity threshold-0_0">
+<span>0.596</span>
+<br/>IM:1913
+<br/>AM:5
+<br/>GG:0<br/>G?:0
+<br/>NE:1302
+      </td>
+    </tr>
+    <tr>
+      <td class="title"><span class="name">AB116084</span>
+<br/>L:3221
+<br/>G:0
+</td>
+<td class="empty">&nbsp;</td>
+      <td class="nt-identity threshold-0_96">
+<span class="best">0.977</span>
+<br/>IM:3147
+<br/>AM:0
+<br/>GG:0<br/>G?:0
+<br/>NE:74
+      </td>
+      <td class="nt-identity threshold-0_0">
+<span>0.946</span>
+<br/>IM:3047
+<br/>AM:1
+<br/>GG:0<br/>G?:0
+<br/>NE:173
+      </td>
+      <td class="nt-identity threshold-0_95">
+<span>0.954</span>
+<br/>IM:3073
+<br/>AM:0
+<br/>GG:0<br/>G?:0
+<br/>NE:148
+      </td>
+      <td class="nt-identity threshold-0_0">
+<span>0.597</span>
+<br/>IM:1916
+<br/>AM:5
+<br/>GG:0<br/>G?:0
+<br/>NE:1299
+      </td>
+    </tr>
+    <tr>
+      <td class="title"><span class="name">AB453988</span>
+<br/>L:3221
+<br/>G:0
+</td>
+<td class="empty">&nbsp;</td>
+<td class="empty">&nbsp;</td>
+      <td class="nt-identity threshold-0_95">
+<span>0.95</span>
+<br/>IM:3060
+<br/>AM:1
+<br/>GG:0<br/>G?:0
+<br/>NE:160
+      </td>
+      <td class="nt-identity threshold-0_95">
+<span class="best">0.957</span>
+<br/>IM:3083
+<br/>AM:0
+<br/>GG:0<br/>G?:0
+<br/>NE:138
+      </td>
+      <td class="nt-identity threshold-0_0">
+<span>0.596</span>
+<br/>IM:1914
+<br/>AM:5
+<br/>GG:0<br/>G?:0
+<br/>NE:1301
+      </td>
+    </tr>
+    <tr>
+      <td class="title"><span class="name">AY738142</span>
+<br/>L:3221
+<br/>G:0
+</td>
+<td class="empty">&nbsp;</td>
+<td class="empty">&nbsp;</td>
+<td class="empty">&nbsp;</td>
+      <td class="nt-identity threshold-0_95">
+<span class="best">0.952</span>
+<br/>IM:3067
+<br/>AM:1
+<br/>GG:0<br/>G?:0
+<br/>NE:153
+      </td>
+      <td class="nt-identity threshold-0_0">
+<span>0.594</span>
+<br/>IM:1909
+<br/>AM:5
+<br/>GG:0<br/>G?:0
+<br/>NE:1306
+      </td>
+    </tr>
+    <tr>
+      <td class="title"><span class="name">AY934764</span>
+<br/>L:3221
+<br/>G:0
+</td>
+<td class="empty">&nbsp;</td>
+<td class="empty">&nbsp;</td>
+<td class="empty">&nbsp;</td>
+<td class="empty">&nbsp;</td>
+      <td class="nt-identity threshold-0_0">
+<span class="best">0.6</span>
+<br/>IM:1927
+<br/>AM:5
+<br/>GG:0<br/>G?:0
+<br/>NE:1288
+      </td>
+    </tr>
+    <tr>
+    <td class="empty">&nbsp;</td>
+    <td class="title"><span class="name">AB116084</span>
+    </td>
+    <td class="title"><span class="name">AB453988</span>
+    </td>
+    <td class="title"><span class="name">AY738142</span>
+    </td>
+    <td class="title"><span class="name">AY934764</span>
+    </td>
+    <td class="title"><span class="name">FJ692556</span>
+    </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

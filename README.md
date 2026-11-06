@@ -10,6 +10,9 @@ Here you'll find the slides and videos for our CLUB club meetings.
 * 2026-10-09: **Making consensuses** [Video](https://www.youtube.com/watch?v=64IFH_-Wmik) ✽ [PDF](slides/20261009-consensuses/20261002-consensuses.pdf) ✽ [Markdown](slides/20261009-consensuses/20261009-consensuses.md)
 * 2026-10-16: **Multiple sequence alignments** [Video](https://www.youtube.com/watch?v=hoEC7DzNtmo) ✽ [PDF](slides/20261016-multiple-sequence-alignment/20261002-consensuses.pdf) ✽ [Markdown](slides/20261016-multiple-sequence-alignment/20261016-multiple-sequence-alignment.md)
 * 2026-10-23: **Making trees** [Video](https://www.youtube.com/watch?v=cfQ5XW_Bcbg) ✽ [PDF](slides/20261023-trees/20261002-consensuses.pdf) ✽ [Markdown](slides/20261023-trees/20261023-trees.md)
+* 2026-11-06: **Dark-matter scripts** [Video](https://www.youtube.com/watch?v=uqzhRNgtcY8) ✽ [PDF](slides/20261106-dark-matter/20261106-dark-matter.pdf) ✽ [Markdown](slides/20261106-dark-matter/20261106-dark-matter.md)
+
+https://youtu.be/
 
 ## Presenting
 
