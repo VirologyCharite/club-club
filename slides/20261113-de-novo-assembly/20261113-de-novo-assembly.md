@@ -285,24 +285,23 @@ https://pmc.ncbi.nlm.nih.gov/articles/PMC7293574/
 # From the Abstract
 
 Currently, the standard practice for assembling next-generation
-sequencing (NGS) reads of viralgenomes is to summarize thousands of
+sequencing (NGS) reads of viral genomes is to summarize thousands of
 individual short reads into a single consensus sequence, thus
 confounding useful intra-host diversity information for molecular
 phylodynamic inference. It is hypothesized that a few viral strains
-may dominate the intra-host genetic diversity with a variety of
-lower frequency strains comprising the rest of the population.
-Several software tools currently exist to convert NGS sequence
-variants into haplotypes. Previous benchmarks of viral haplotype
-reconstruction programs used simulation scenarios that are useful
-from a mathematical perspective but do not reflect viral evolution
-and epidemiology. Here, we tested twelve NGS haplotype
-reconstruction methods using viral populations simulated under
-realistic evolutionary dynamics. We simulated coalescent-based
-populations that spanned known levels of viral genetic diversity,
-including mutation rates, sample size and effective population size,
-to test the limits of the haplotype reconstruction methods and to
-ensure coverage of predicted intra-host viral diversity levels
-(especially HIV-1).
+may dominate the intra-host genetic diversity with a variety of lower
+frequency strains comprising the rest of the population.  Several
+software tools currently exist to convert NGS sequence variants into
+haplotypes. Previous benchmarks of viral haplotype reconstruction
+programs used simulation scenarios that are useful from a mathematical
+perspective but do not reflect viral evolution and epidemiology. Here,
+we tested twelve NGS haplotype reconstruction methods using viral
+populations simulated under realistic evolutionary dynamics. We
+simulated coalescent-based populations that spanned known levels of
+viral genetic diversity, including mutation rates, sample size and
+effective population size, to test the limits of the haplotype
+reconstruction methods and to ensure coverage of predicted intra-host
+viral diversity levels (especially HIV-1).
 
 All twelve investigated haplotype callers showed variable
 performance and produced drastically different results that were
@@ -317,10 +316,14 @@ highly variable and, on average, poor
 Connection to unravelling multiple infections
 ===
 
+The problem of assembling haplotype sequences from a viral
+quasispecies is identical to figuring out the consensus sequences in a
+multiple infection.
+
 ![image:width:55%](../images/igv-multiple-infection-reads.png)
 
 
-Upcoming classes
+Upcoming (final?) class
 ===
 
 * Protein-level matching with DIAMOND.
