@@ -170,9 +170,17 @@ https://ablab.github.io/spades/
 Installing SPAdes
 ===
 
-You can't do this via Pixi. You need to either download a pre-built
-binary or download the source code and build it yourself. The former
-is much easier (and, some would argue, also riskier).
+# With Pixi
+
+```bash
+$ pixi add spades
+```
+
+# Without Pixi
+
+Either download a pre-built binary or download the source code and
+build it yourself. The former is much easier (and, some would argue,
+also riskier).
 
 Their GitHub page https://github.com/ablab/spades has a pointer to the
 Download page https://github.com/ablab/spades/releases/latest/
@@ -200,7 +208,7 @@ On two paired-end FASTQ files, assuming you have changed directory to
 ```bash
 $ spades.py \
     -1 ~/data/fastq/HBV_RISE718_R1_trimmed.fastq.gz \
-    -2 data/fastq/HBV_RISE718_R2_trimmed.fastq.gz \
+    -2 ~/data/fastq/HBV_RISE718_R2_trimmed.fastq.gz \
     -o output-dir
 ```
 
