@@ -36,18 +36,21 @@ As usual, this is a complicated subject with many packages available.
 
 As usual, in preparing slides for the "class" I realized how little I know.
 
-What is _de novo_ assembly?
+Why do we need to assemble?
 ===
+
+We first break DNA molecules into pieces because the physical
+sequencing methods have historically only worked on DNA fragments with
+a small number of nucleotides (up to a few hundred).  This is slowly
+changing, with long-read sequencing.  So we try to figure out a genome
+sequence from its fragments, without a reference sequence.
 
 ![image:width:75%](../images/assembly-problem.png)
 
-Reconstruct a genome from fragments, with no reference to guide the
-order.  Reads are short relative to the genome, and they may have
-errors. Coverage depth is uneven.
+Note that there is also
+reference-guided assembly (which we won't discuss today).
 
-Note that there is also reference-guided assembly (which we won't discuss today).
-
-# When would you use it?
+# When/why would you use _de novo_ assembly?
 
 It is quite contentious whether to use _de novo_ assembly at all.
 
@@ -55,23 +58,37 @@ At a metagenomics conference in Cambridge (about 12 years ago), a
 strongly expressed opinion was that you should avoid _de novo_
 assembly because it takes too long and is too error prone.
 
-What makes assembly hard?
+But if you have no reference to begin with, perhaps because your
+sample has something unknown or very distant from known viruses, you
+don't have much choice (at the nucleotide level).
+
+What makes _de novo_ assembly hard?
 ===
 
-* **Repeat** sections of genomes that are longer than the read length
-* **Errors** in reads may result in assembled sequences that are incorrect
-* **Coverage** is uneven, so depth is a noisy signal (for copy number)
-* **Diversity** (multiple infections, strains, quasispecies)
-* **Scale**: is quadratic if an algorithm compares every read with every other
+# It's like doing a fiendishly difficult jigsaw
 
-* **Host background**: most reads in a clinical sample are not viral
+* The jigsaw puzzle box contains tens of millions of pieces.
+* The pieces are from multiple pictures, none of which you get to see.
+* Many of the pictures are almost identical.
+* The picture you're aiming to reconstruct might be vanishingly small.
+* And it might be unlike anything you've ever seen before.
+* Many puzzle pieces are missing, duplicated, and damaged.
+* Puzzle pieces can fit perfectly in multiple places in a single
+  picture and fit perfectly in multiple pictures.
 
+# How Claude describes the difficulties
+
+* **Repeat**: sections of genomes that are longer than the read length.
+* **Errors**: in reads may result in assembled sequences that are incorrect.
+* **Coverage**: is uneven, so depth is a noisy signal (for copy number).
+* **Diversity**: (multiple infections, strains, quasispecies).
+* **Scale**: is quadratic if an algorithm compares every read with every other.
+* **Host background**: most reads in a clinical sample are not viral.
 
 Three classical approaches to _de novo_
 ===
 
-I asked Claude: What are the main approaches to de novo assembly?
-
+I asked Claude: "What are the main approaches to de novo assembly?" 
 It gave three categories (and listed 23 example packages!)
 
 # Greedy extension
@@ -107,16 +124,17 @@ Overlap-layout-consensus
 
 ![image:width:75%](../images/olc.png)
 
-* Overlap all reads, lay them out as a path through the graph, call a consensus
-* Keeps whole reads, so read length is used in full
+* Overlap all reads via pairwise comparison. Done naively, this is O(n²) comparisons.
+* The overlaps define a graph.
+* Walk unambiguous sections of the graph and call a consensus.
 
 # String graphs
 
 A refinement of the overlap graph (Myers, 2005).
 
-* Drop reads contained in other reads
-* Remove **transitive** edges: if r1 overlaps r2 and r2 overlaps r3, the r1 to r3 edge adds nothing
-* What remains: unique stretches become simple paths, repeats become shared paths
+* Drop reads contained in other reads.
+* Remove **transitive** edges: if r1 overlaps r2 & r2 overlaps r3, remove the r1 to r3 edge.
+* What remains: unique stretches become simple paths, repeats become shared paths.
 
 De Bruijn graphs
 ===
@@ -156,15 +174,20 @@ You can't do this via Pixi. You need to either download a pre-built
 binary or download the source code and build it yourself. The former
 is much easier (and, some would argue, also riskier).
 
+Their GitHub page https://github.com/ablab/spades has a pointer to the
+Download page https://github.com/ablab/spades/releases/latest/
+
 On Linux:
 
-From https://ablab.github.io/spades/installation.html
-
 ```sh
-$ wget https://github.com/ablab/spades/releases/download/v3.15.5/SPAdes-3.15.5-Linux.tar.gz
-$ tar -xzf SPAdes-3.15.5-Linux.tar.gz
-$ cd SPAdes-3.15.5-Linux/bin
+$ wget https://github.com/ablab/spades/releases/download/v4.3.0/SPAdes-4.3.0-Linux.tar.gz
+$ tar -xzf SPAdes-4.3.0-Linux.tar.gz
+$ cd SPAdes-4.3.0-Linux.tar.gz/bin
 ```
+
+**Note**: this installation page
+https://ablab.github.io/spades/installation.html is outdated! It tells
+you to download version 3.15.
 
 Running SPAdes
 ===
@@ -175,12 +198,11 @@ On two paired-end FASTQ files, assuming you have changed directory to
 `SPAdes-3.15.5-Linux/bin` as above:
 
 ```bash
-$ spades.py -1 R1.fastq.gz -2 R2.fastq.gz -o output-dir
+$ spades.py \
+    -1 ~/data/fastq/HBV_RISE718_R1_trimmed.fastq.gz \
+    -2 data/fastq/HBV_RISE718_R2_trimmed.fastq.gz \
+    -o output-dir
 ```
-
-When it finishes, look in `output-dir`. The file you'll likely be most
-interested in there is `contigs.fasta`. See
-https://ablab.github.io/spades/output.html for details.
 
 # Options
 
@@ -208,6 +230,15 @@ There is a way to parallelize some SPAdes steps on a SLURM cluster.
 But you'll have to compile SPAdes yourself. See this page
 https://ablab.github.io/spades/hpc.html
 
+SPAdes output
+===
+
+When SPAdes finishes, look in the output directory you specified
+(`output-dir` in the above). The file you'll likely be most interested
+in there is `contigs.fasta`. See
+https://ablab.github.io/spades/output.html for details.
+
+![image:width:75%](../images/spades-output.png)
 
 Challenges with viral reads
 ===
