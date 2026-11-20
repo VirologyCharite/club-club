@@ -12,7 +12,7 @@ Here you'll find the slides and videos for our CLUB club meetings.
 8. **Making trees** 2026-10-23 [Video](https://www.youtube.com/watch?v=cfQ5XW_Bcbg), [PDF](slides/20261023-trees/20261002-consensuses.pdf), [Markdown](slides/20261023-trees/20261023-trees.md)
 9. **Dark-matter scripts** 2026-11-06 [Video](https://www.youtube.com/watch?v=uqzhRNgtcY8), [PDF](slides/20261106-dark-matter/20261106-dark-matter.pdf), [Markdown](slides/20261106-dark-matter/20261106-dark-matter.md)
 10. **_De novo_ assembly** 2026-11-13 [Video](https://www.youtube.com/watch?v=bIQzwGpEUeI), [PDF](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.pdf), [Markdown](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.md)
-11. **aa mapping** 2026-11-20 [Video](https://www.youtube.com/watch?v=XXX), [PDF](slides/20261120-aa-mapping/20261120-aa-mapping.pdf), [Markdown](slides/20261120-aa-mapping/20261120-aa-mapping.md)
+11. **aa mapping** 2026-11-20 [Video](https://www.youtube.com/watch?v=zwfqQWN61HE), [PDF](slides/20261120-aa-mapping/20261120-aa-mapping.pdf), [Markdown](slides/20261120-aa-mapping/20261120-aa-mapping.md)
 
 ## Presenting the slides
 

@@ -202,7 +202,7 @@ $ fasta-count.py ncbi_dataset/data/protein.faa
 
 $ pixi add jq
 
-$ jq .virus.organismName ncbi_dataset/data/data_report.jsonl
+$ jq -r .virus.organismName ncbi_dataset/data/data_report.jsonl | sort
 Bat coronavirus BM48-31/BGR/2008
 Bat Hp-betacoronavirus/Zhejiang2013
 Betacoronavirus England 1
@@ -225,12 +225,12 @@ Severe acute respiratory syndrome coronavirus 2
 Tylonycteris bat coronavirus HKU4
 ```
 
-And you'll need some FASTQ
+You'll need some FASTQ
 ===
 
-That you can match against the DIAMOND database.
+To match against the DIAMOND database that we'll make in the next step.
 
-There is some SARS-2 FASTQ in `~/data/fastq`. 
+There is some SARS-2 FASTQ in `~/data/fastq` on the Charité cluster.
 
 # And (bonus!) I have trimmed it for you:
 
@@ -273,6 +273,8 @@ $ diamond version
 diamond version 2.2.9
 ```
 
+Documentation is at https://github.com/bbuchfink/diamond/wiki
+
 Make a DIAMOND database
 ===
 
@@ -307,7 +309,7 @@ https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options
 
 # Output
 
-But what will we find in `R1.out`?
+But what will we find in `diamond.out`?
 
 `--outfmt` is useful. See `diamond blastx | less` for a ton of
 options.
