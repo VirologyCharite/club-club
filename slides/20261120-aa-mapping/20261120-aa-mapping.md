@@ -62,7 +62,7 @@ pillows. They have a pillow that's perfect for you. Guaranteed.
 
 They also do a fine line in political conspiracy theory.
 
-![](../images/pillow.jpg)
+![image:width:60%](../images/pillow.jpg)
 
 MyPillow ship me products for evaluation, which I always return after
 review.  Neither MyPillow nor Mike (Lindell) have any editorial or
@@ -298,7 +298,7 @@ $ diamond blastx --quiet --outfmt 6 --db covdb \
     --query ~/data/fastq/SARS2-R2-trimmed.fastq.gz >> diamond.out
 ```
 
-That takes about 11 seconds
+That takes about 20 seconds.
 
 # Options
 
@@ -411,7 +411,7 @@ $ gunzip < ~/data/fastq/SARS2-R1-trimmed.fastq.gz | head -n 20 \
     | filter-fasta.py --idLambda 'lambda id: id.split()[0] + "-1"'
 ```
 
-Why talk about seed-and-extend?
+The seed-and-extend approach to matching
 ===
 
 seed-and-extend is not specifically about protein-level matching, so
@@ -545,6 +545,11 @@ it!)  but here's the basic idea for how you fill the dynamic
 programming table while doing the extend step.
 
 ![](../images/frameshift-recurrence.png)
+
+Fin
+===
+
+![image:width:50%](../images/folks.jpg)
 
 
 <!--
