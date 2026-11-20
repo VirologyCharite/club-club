@@ -68,7 +68,7 @@ FASTA package. Libraries: parasail (C, with Python and Rust bindings),
 SWIPE, opal. Biopython’s PairwiseAligner is ok for small jobs.  GPU:
 CUDASW++ 4.0.
 
-* Heuristic database search (seed and extend): BLASTP, FASTA
+* Heuristic database search (seed-and-extend): BLASTP, FASTA
 DIAMOND blastp, MMseqs2, and USEARCH/UBLAST.
 
 * Profile methods (more sensitive for remote homologues): PSI-BLAST,
@@ -123,7 +123,7 @@ Back in 2015 or so, BLAST was about 250K lines of code.
 Which they told me was a feature: https://terry.fluidinfo.com/2017/08/25/a-blast-puzzle/
 
 This stems from a fundamental weakness (or you could say tradeoff) in the
-seed and extend approach that's used by many programs. More on that later.
+seed-and-extend approach that's used by many programs. More on that later.
 
 Today we'll use DIAMOND
 ===
@@ -385,11 +385,140 @@ $ gunzip < ~/data/fastq/SARS2-R1-trimmed.fastq.gz | head -n 20 \
     | filter-fasta.py --idLambda 'lambda id: id.split()[0] + "-1"'
 ```
 
-Understanding seed and extend
+Why talk about seed-and-extend?
 ===
 
-Frameshifts
+seed-and-extend is not specifically about protein-level matching, so
+why discuss it today?
+
+It's good to understand the approach for several reasons. Firstly,
+it's very widely used. Understanding it can help you to think about
+why there are differences in algorithms and the trade-offs involved.
+Second, it's a nice example of algorithmic thinking: how to do
+something quickly, with a known and acceptable risk of making
+mistakes, and how to concretely implement it.
+
+# The motivation
+
+Exact matching is slow, and _much_ more so if you want to allow
+arbitrary insertions and deletions.
+
+There are exact algorithms, such as Smith-Waterman and
+Needleman–Wunsch. They are great for use in simple situations.
+
+But we need something much, much faster if we want to match millions
+or billions of reads against a large database of reference sequences
+(or against a small database of long reference sequences, such as
+eukaryotic genomes).
+
+Understanding seed-and-extend
 ===
+
+Matching is divided into two phases.
+
+# Seed
+
+First, you try to _quickly_ find something (a "seed") in the read (the
+"query") that makes it seem worth further considering the read. This
+can be done very quickly, by looking up parts of the query in a big
+table. For example, one version of BLAST looks for the continuous read
+subsequences of 11 nucleotides. Other algorithms, including DIAMOND,
+look for discontinuous k-mers of various sizes and patterns.
+
+If none of the query subsequences are in the big table, the query is
+considered not to match anything. This can, and will, generate false
+negatives.
+
+# Extend
+
+Then, for each of the reads in which step 1 identified a seed, you
+identify all reference sequences that also contain that seed. For each
+of these, you try to extend (i.e., maximize) the seed match in both
+directions in that reference.
+
+As you extend, you keep a match score and you stop if the score drops
+below some threshold.
+
+# But first: the big table
+
+The big table mentioned above is what is built when you run `bowtie2
+build` or `diamond makedb`, etc. In computer science terms, it's a
+"hash table" (aka a "hash" or "dictionary" or "associative array" in
+different programming languanges).
+
+The hash table "keys" (like words in a dictionary) are seed sequences.
+Each slot in the table holds information about which references
+contain that seed and where in the references the seed can be
+found. This is the starting point for the Extend phase of
+seed-and-extend.
+
+Seed-and-extend example
+===
+
+There's only one reference sequence in the database in this
+example. Normally there would be many. And only one read is examined.
+
+![](../images/seed-and-extend.png)
+
+Seed-and-extend trade-offs
+===
+
+* False negatives when reads match a reference well but happen not to
+  contain any matching seed.
+* They will also happen if you discard reads with matching seeds if
+  you sort matches after the seed phase and only keep the best ones.
+* Matching with indels is very expensive, so we only do it when it
+  seems worthwhile.
+  
+The extend step uses dynamic programming
+===
+
+![](../images/sw_1_setup.png)
+
+Dynamic programming - filling the table
+===
+
+![](../images/sw_2_fill.png)
+
+Dynamic programming - the completed table
+===
+
+![](../images/sw_3_complete.png)
+
+Dynamic programming - tracing the match
+===
+
+![](../images/sw_4_traceback.png)
+
+Handling frameshifts
+===
+
+An indel can completely derail the matching of a read that is
+otherwise a perfect match.
+
+This becomes very important when you have a sequencing technology that
+makes frequent errors.
+
+Raw ONT (Oxford Nanopore Technologies) long reads have an indel every
+few tens to hundreds of bases, so without dealing with this, a long
+read will break into many short, weaker hits.
+
+Some algorithms have ways to try to deal with short indels that cause
+a frameshift. E.g., DIAMOND has a `-F` option. The speed and space
+overhead is pretty minimal (a factor of three for space).
+
+Although this is called dealing with frameshifts, that gives it a
+protein-level match flavour. It's really a general mechanism for
+dealing with single indels while matching (i.e., you can also do the
+same thing while matching at the nucleotide level).
+
+# The recurrence for filling the DP table
+
+There's no time to go into this today (and I don't fully understand
+it!)  but here's the basic idea for how you fill the dynamic
+programming table while doing the extend step.
+
+![](../images/frameshift-recurrence.png)
 
 
 <!--

@@ -1,4 +1,4 @@
-# Command-line UNIX for Bioinformatics
+## Command-line UNIX for Bioinformatics (CLUB) club
 
 Here you'll find the slides and videos for our CLUB club meetings.
 
@@ -14,10 +14,10 @@ Here you'll find the slides and videos for our CLUB club meetings.
 10. **_De novo_ assembly** 2026-11-13 [Video](https://www.youtube.com/watch?v=bIQzwGpEUeI), [PDF](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.pdf), [Markdown](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.md)
 11. **aa mapping** 2026-11-20 [Video](https://www.youtube.com/watch?v=XXX), [PDF](slides/20261120-aa-mapping/20261120-aa-mapping.pdf), [Markdown](slides/20261120-aa-mapping/20261120-aa-mapping.md)
 
-## Presenting
+## Presenting the slides
 
-The slides are written in Markdown and are presented in the
-terminal. If you want to do that, you'll need
+The slides are written in Markdown and presented in the terminal.  If
+you want to do that, you'll need
 [presenterm](https://github.com/mfontanini/presenterm) ([installation
 instructions](https://mfontanini.github.io/presenterm/install.html)).
 
@@ -26,6 +26,7 @@ Use [kitty](https://sw.kovidgoyal.net/kitty/) if you want variable font sizes to
 Run as follows:
 
 ```bash
+# Show the 2026-09-04 introduction slides.
 $ presenterm slides/20260904-intro-and-setup/20260904-intro-and-setup.md
 ```
 
@@ -45,7 +46,7 @@ $ brew install weasyprint gdk-pixbuf
 $ make pdf
 ```
 
-## Verifying slides build
+## Tests
 
 `make verify` checks that every slide deck under `slides/` can be exported
 to PDF by presenterm without error (this needs [tmux](https://github.com/tmux/tmux)
