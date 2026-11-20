@@ -2,17 +2,17 @@
 
 Here you'll find the slides and videos for our CLUB club meetings.
 
-1. 2026-09-04: **Intro and setup** [Video](https://youtu.be/W7wlbDF9Ey0) ✽ [PDF](slides/20260904-intro-and-setup/20260904-intro-and-setup.pdf) ✽ [Markdown](slides/20260904-intro-and-setup/20260904-intro-and-setup.md)
-2. 2026-09-11: **Working with sequences** [Video](https://www.youtube.com/watch?v=ud3rFYOZ3CM) ✽ [PDF](slides/20260911-ngs-data/20260911-ngs-data.pdf) ✽ [Markdown](slides/20260911-ngs-data/20260911-ngs-data.md)
-3. 2026-09-18: **Mapping with bowtie2** [Video](https://www.youtube.com/watch?v=fUVUMLMscdk) ✽ [PDF](slides/20260918-nt-mapping/20260918-nt-mapping.pdf) ✽ [Markdown](slides/20260918-nt-mapping/20260918-nt-mapping.md)
-4. 2026-09-25: **Using SLURM** [Video](https://www.youtube.com/watch?v=xhfKUMNoMFQ) ✽ [PDF](slides/20260925-slurm/20260925-slurm.pdf) ✽ [Markdown](slides/20260925-slurm/20260925-slurm.md)
-5. 2026-10-02: **Getting sequences** [Video](https://www.youtube.com/watch?v=3I-6uYH051Y) ✽ [PDF](slides/20261002-getting-sequences/20261002-getting-sequences.pdf) ✽ [Markdown](slides/20261002-getting-sequences/20261002-getting-sequences.md)
-6. 2026-10-09: **Making consensuses** [Video](https://www.youtube.com/watch?v=64IFH_-Wmik) ✽ [PDF](slides/20261009-consensuses/20261002-consensuses.pdf) ✽ [Markdown](slides/20261009-consensuses/20261009-consensuses.md)
-7. 2026-10-16: **Multiple sequence alignments** [Video](https://www.youtube.com/watch?v=hoEC7DzNtmo) ✽ [PDF](slides/20261016-multiple-sequence-alignment/20261002-consensuses.pdf) ✽ [Markdown](slides/20261016-multiple-sequence-alignment/20261016-multiple-sequence-alignment.md)
-8. 2026-10-23: **Making trees** [Video](https://www.youtube.com/watch?v=cfQ5XW_Bcbg) ✽ [PDF](slides/20261023-trees/20261002-consensuses.pdf) ✽ [Markdown](slides/20261023-trees/20261023-trees.md)
-9. 2026-11-06: **Dark-matter scripts** [Video](https://www.youtube.com/watch?v=uqzhRNgtcY8) ✽ [PDF](slides/20261106-dark-matter/20261106-dark-matter.pdf) ✽ [Markdown](slides/20261106-dark-matter/20261106-dark-matter.md)
-10. 2026-11-13: **_De novo_ assembly** [Video](https://www.youtube.com/watch?v=bIQzwGpEUeI) ✽ [PDF](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.pdf) ✽ [Markdown](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.md)
-11. 2026-11-20: **aa mapping** [Video](https://www.youtube.com/watch?v=XXX) ✽ [PDF](slides/20261120-aa-mapping/20261120-aa-mapping.pdf) ✽ [Markdown](slides/20261120-aa-mapping/20261120-aa-mapping.md)
+1. **Intro and setup** 2026-09-04 [Video](https://youtu.be/W7wlbDF9Ey0), [PDF](slides/20260904-intro-and-setup/20260904-intro-and-setup.pdf), [Markdown](slides/20260904-intro-and-setup/20260904-intro-and-setup.md)
+2. **Working with sequences** 2026-09-11 [Video](https://www.youtube.com/watch?v=ud3rFYOZ3CM), [PDF](slides/20260911-ngs-data/20260911-ngs-data.pdf), [Markdown](slides/20260911-ngs-data/20260911-ngs-data.md)
+3. **Mapping with bowtie2** 2026-09-18 [Video](https://www.youtube.com/watch?v=fUVUMLMscdk), [PDF](slides/20260918-nt-mapping/20260918-nt-mapping.pdf), [Markdown](slides/20260918-nt-mapping/20260918-nt-mapping.md)
+4. **Using SLURM** 2026-09-25 [Video](https://www.youtube.com/watch?v=xhfKUMNoMFQ), [PDF](slides/20260925-slurm/20260925-slurm.pdf), [Markdown](slides/20260925-slurm/20260925-slurm.md)
+5. **Getting sequences** 2026-10-02 [Video](https://www.youtube.com/watch?v=3I-6uYH051Y), [PDF](slides/20261002-getting-sequences/20261002-getting-sequences.pdf), [Markdown](slides/20261002-getting-sequences/20261002-getting-sequences.md)
+6. **Making consensuses** 2026-10-09 [Video](https://www.youtube.com/watch?v=64IFH_-Wmik), [PDF](slides/20261009-consensuses/20261002-consensuses.pdf), [Markdown](slides/20261009-consensuses/20261009-consensuses.md)
+7. **Multiple sequence alignments** 2026-10-16 [Video](https://www.youtube.com/watch?v=hoEC7DzNtmo), [PDF](slides/20261016-multiple-sequence-alignment/20261002-consensuses.pdf), [Markdown](slides/20261016-multiple-sequence-alignment/20261016-multiple-sequence-alignment.md)
+8. **Making trees** 2026-10-23 [Video](https://www.youtube.com/watch?v=cfQ5XW_Bcbg), [PDF](slides/20261023-trees/20261002-consensuses.pdf), [Markdown](slides/20261023-trees/20261023-trees.md)
+9. **Dark-matter scripts** 2026-11-06 [Video](https://www.youtube.com/watch?v=uqzhRNgtcY8), [PDF](slides/20261106-dark-matter/20261106-dark-matter.pdf), [Markdown](slides/20261106-dark-matter/20261106-dark-matter.md)
+10. **_De novo_ assembly** 2026-11-13 [Video](https://www.youtube.com/watch?v=bIQzwGpEUeI), [PDF](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.pdf), [Markdown](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.md)
+11. **aa mapping** 2026-11-20 [Video](https://www.youtube.com/watch?v=XXX), [PDF](slides/20261120-aa-mapping/20261120-aa-mapping.pdf), [Markdown](slides/20261120-aa-mapping/20261120-aa-mapping.md)
 
 ## Presenting
 
