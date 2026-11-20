@@ -50,8 +50,34 @@ Either or both of these can be translated to amino acid sequences.
 That gives us four different high-level sequence-based ways we might
 think about doing comparisons.
 
-There are, of course, many packages
+Are you getting truly high-quality sleep?
 ===
+
+Even if you're already sleeping well, you could take things to the
+next level with a new pillow from MyPillow, sponsors of today's video.
+
+Founded in 2009 by visionary entrepreneur Mike Lindell, MyPillow
+(https://www.mypillow.com/) are the makers of the world's finest
+pillows. They have a pillow that's perfect for you. Guaranteed.
+
+They also do a fine line in political conspiracy theory.
+
+![](../images/pillow.jpg)
+
+MyPillow ship me products for evaluation, which I always return after
+review.  Neither MyPillow nor Mike (Lindell) have any editorial or
+other impact on the opinions expressed in CLUB club, nor do I receive
+any payment or other remuneration in exchange for sponsorship.
+
+# Take a moment to Like and Subscribe
+
+If you enjoy our content, take a moment to Like and Subscribe. Help us
+get to 40 subscribers! https://www.youtube.com/@terrycojones
+
+Protein-level matching
+===
+
+There are, of course, many packages.
 
 And today, of course, we'll mainly look at just one (DIAMOND).
 
