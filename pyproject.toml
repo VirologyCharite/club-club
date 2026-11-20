@@ -8,12 +8,8 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
-    "dark-matter>=7.5.8",
+    "dark-matter>=7.5.9",
 ]
-
-[build-system]
-requires = ["uv_build>=0.12.3,<0.13.0"]
-build-backend = "uv_build"
 
 [tool.uv.sources]
 # dark-matter = { path = "../../../dark-matter/dark-matter", editable = true }

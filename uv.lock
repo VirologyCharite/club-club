@@ -386,13 +386,13 @@ wheels = [
 [[package]]
 name = "club-club"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "dark-matter" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dark-matter", editable = "../../../dark-matter/dark-matter" }]
+requires-dist = [{ name = "dark-matter", specifier = ">=7.5.9" }]
 
 [[package]]
 name = "colorama"
@@ -513,8 +513,8 @@ wheels = [
 
 [[package]]
 name = "dark-matter"
-version = "7.5.8"
-source = { editable = "../../../dark-matter/dark-matter" }
+version = "7.5.9"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bio" },
     { name = "biopython" },
@@ -545,47 +545,10 @@ dependencies = [
     { name = "types-requests" },
     { name = "xlsxwriter" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "bio", specifier = ">=1.8.1" },
-    { name = "biopython", specifier = ">=1.87" },
-    { name = "bz2file", specifier = ">=0.98" },
-    { name = "cachetools", specifier = ">=5.5.2" },
-    { name = "cython", specifier = ">=0.29.16" },
-    { name = "dendropy", specifier = ">=5.0.1" },
-    { name = "edlib", specifier = ">=1.3.9.post1" },
-    { name = "ete4", specifier = ">=4.4.0" },
-    { name = "gb2seq", specifier = ">=0.3.6" },
-    { name = "ipython", specifier = ">=8.12.3" },
-    { name = "kaleido", specifier = ">=1.2.0" },
-    { name = "matplotlib", specifier = ">=3.7.5" },
-    { name = "mysql-connector-python", specifier = ">=9.0.0" },
-    { name = "numpy", specifier = ">=1.14.2" },
-    { name = "plotly", specifier = ">=6.6.0" },
-    { name = "polars", specifier = ">=1.36.1" },
-    { name = "progressbar", specifier = ">=2.5" },
-    { name = "prseq", specifier = ">=0.0.34" },
-    { name = "pysam", specifier = ">=0.23.0" },
-    { name = "pyzmq", specifier = ">=14.3.1" },
-    { name = "requests", specifier = ">=2.32.3" },
-    { name = "rich", specifier = ">=14.0.0" },
-    { name = "scikit-learn", specifier = ">=1.3.2" },
-    { name = "simplejson", specifier = ">=3.5.3" },
-    { name = "summarize-ranges", specifier = ">=0.1.1" },
-    { name = "tomli", marker = "python_full_version < '3.11'", specifier = ">=2.0.1" },
-    { name = "types-cachetools", specifier = ">=5.5.0" },
-    { name = "types-requests", specifier = ">=2.32.0" },
-    { name = "xlsxwriter", specifier = ">=3.2.9" },
+sdist = { url = "https://files.pythonhosted.org/packages/03/b9/14c3dc67fb14ca54d17dc3097fc2a4c1690f49991e34066571e2e1acfaee/dark_matter-7.5.9.tar.gz", hash = "sha256:6eda77f27828665e26930d03d5c41e046b0757396145531cf0dd83f700063468", size = 499403, upload-time = "2026-11-08T13:28:51.15Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/41/fd/bde5fbfa157a7f8590e4191eda059216f3c84d21afb7eafb49739e6c5c8b/dark_matter-7.5.9-py3-none-any.whl", hash = "sha256:f2a10627a02b5044e8ad9c5f026f4c2f6a2008c8ce8cf4c9434cdc88f89be1ad", size = 447440, upload-time = "2026-11-08T13:28:49.504Z" },
 ]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "nox", specifier = ">=2025.5.1" },
-    { name = "pytest", specifier = ">=8.3.5" },
-    { name = "ruff", specifier = ">=0.15.9" },
-]
-docs = [{ name = "mkdocs-material", specifier = ">=9.7.7" }]
 
 [[package]]
 name = "dendropy"
