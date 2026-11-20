@@ -14,8 +14,6 @@ Here you'll find the slides and videos for our CLUB club meetings.
 10. 2026-11-13: **_De novo_ assembly** [Video](https://www.youtube.com/watch?v=bIQzwGpEUeI) ✽ [PDF](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.pdf) ✽ [Markdown](slides/20261113-de-novo-assembly/20261113-de-novo-assembly.md)
 11. 2026-11-20: **aa mapping** [Video](https://www.youtube.com/watch?v=XXX) ✽ [PDF](slides/20261120-aa-mapping/20261120-aa-mapping.pdf) ✽ [Markdown](slides/20261120-aa-mapping/20261120-aa-mapping.md)
 
-https://youtu.be/
-
 ## Presenting
 
 The slides are written in Markdown and are presented in the
